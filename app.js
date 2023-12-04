@@ -1,3 +1,7 @@
+
+import React from 'react';
+import ReactDOM  from 'react-dom/client';
+
 // second arg is for giving  attributes to a tags
 const heading = React.createElement('h1',{},'Hello world')
 //heading is a react element 
@@ -17,7 +21,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
  */
 
 
-const heading2 = React.createElement('div',{id : "parent"},React.createElement('div',{id :'child'},[React.createElement('h1',{},'gsg'),React.createElement('h1',{},'gsg')]))
+const heading2 = React.createElement('div',{id : "parent"},React.createElement('div',{id :'child'},[React.createElement('h1',{},'gsg'),React.createElement('h1',{},'Namaste react launch!!!!!')]))
 root.render(heading2)
 
 
