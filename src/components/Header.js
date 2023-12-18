@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 
 
@@ -14,10 +14,11 @@ const Header = () =>{
             </div>
             <div className="nav-items">
                 <ul>
-                    <li> Home</li>
-                    <li>Contact Us</li>
-                    <li>About us</li>
-                    <li>Cart</li>
+                    <li><Link to="/"> Home</Link></li>
+                    <li><Link to="/contact"> Contact Us </Link></li>
+                    <li> <Link to="/about"> About us </Link></li>
+                    <li> <Link to="/cart"> Cart </Link></li>
+                    <li> <Link to="/grocery"> Grocery </Link></li>
                     <button className="login-btn">Login</button>
                 </ul>
             </div>

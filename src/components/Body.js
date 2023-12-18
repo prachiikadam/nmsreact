@@ -1,26 +1,28 @@
 
-import RestaurantCard from "./RestaurantCard"
+import RestaurantCard ,{hocPromotedRestaurantCard} from "./RestaurantCard"
 import  {restaurantList, swiggy_url} from "../utils/constants"
 import { useEffect ,useState } from "react"
 import Shimmer from './Shimmer.js'
+import { Link } from "react-router-dom"
 
  const Body = () =>{
     const [listOfRestaurants ,setListOfRestaurants] = useState([])
     const [searchText , setSearchText] = useState("")
     const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([])
-    
-    useEffect(()=>{
-        fetchData()
-    },[])
+    const PromotedRestaurantCard = hocPromotedRestaurantCard(RestaurantCard)
 
     const fetchData = async() =>{
         const data = await fetch(swiggy_url)
         const json_data = await data.json()
-        //console.log(json_data,json_data.data.cards[2].card.card.gridElements)
+        console.log(json_data,json_data.data.cards[2].card.card.gridElements)
         setListOfRestaurants(json_data.data.cards[5].card.card.gridElements?.infoWithStyle?.restaurants)
         setFilteredListOfRestaurants(json_data.data.cards[5].card.card.gridElements?.infoWithStyle?.restaurants)
     }
 
+    
+    useEffect(()=>{
+        fetchData()
+    },[])
     if(filteredListOfRestaurants.length == 0){
         return(<Shimmer/>)
     }
@@ -46,7 +48,14 @@ import Shimmer from './Shimmer.js'
                 >Top Rated Restaurant</button>
             </div>
             <div className="res-container">
-                {filteredListOfRestaurants.map((restaurant)=> <RestaurantCard key = {restaurant?.info?.id} resData = {restaurant.info}/>)}
+                {filteredListOfRestaurants.map((restaurant)=>{
+                 return (
+                 <Link to={'/restaurantmenu/' +restaurant.info.id}>
+                    {
+                        restaurant.info.promoted ? <PromotedRestaurantCard key = {restaurant?.info?.id} resData = {restaurant.info}/>:
+                        <RestaurantCard key = {restaurant?.info?.id} resData = {restaurant.info}/>
+                    }
+                 </Link>)})}
             </div>
         </div>
     )

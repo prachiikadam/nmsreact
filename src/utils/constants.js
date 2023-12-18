@@ -1818,9 +1818,14 @@ export const restaurantList = [
     },
   ];
 
+// These four variables are for my own reference 
+const firstCorsProxy = 'https://corsproxy.io/'
+const secondCorsProxy = 'https://cors-anywhere.herokupp.com/'
+const original_swiggy_restaurant_url = "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.6150512&lng=73.7691138&restaurantId=396721&catalog_qa=undefined&submitAction=ENTER"
+const orignal_swiggy_url = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.848132&lng=74.594388&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+export const swiggy_url ='https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D16.848132%26lng%3D74.594388%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING'
 
-
-export const swiggy_url ='https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.848132&lng=74.594388&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+export const swiggy_restaurant_url= "https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D18.6150512%26lng%3D73.7691138%26restaurantId%3D396721%26catalog_qa%3Dundefined%26submitAction%3DENTER"
 //export default restaurantList
 
 // console.log(module.exports.restaurantList)
