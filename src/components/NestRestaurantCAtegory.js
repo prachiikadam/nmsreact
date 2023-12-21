@@ -1,11 +1,10 @@
 import React from 'react'
 import SingleRestaurantCategory from './SingleRestaurantCategory'
 
-function NestRestaurantCAtegory({data}) {
+function NestRestaurantCAtegory({data,isNestedItem}) {
   return (
     <div>
-        <h3>{data.title}</h3>
-        {data.categories.length && <SingleRestaurantCategory data={data.categories[0]}/> }
+        {data.categories.length && <SingleRestaurantCategory data={data.categories[0]} title={data.title}/> }
     </div>
   )
 }

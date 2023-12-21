@@ -1,6 +1,6 @@
 import ItemList from "./ItemList"
 import NestRestaurantCAtegory from "./NestRestaurantCAtegory"
-import SingleRestaurantCategory from "./SingleRestaurantCategory"
+import SingleRestaurantCategory from "./SingleRestaurantCategory.js"
 
 
 
@@ -10,7 +10,7 @@ const RestaurantCategory = ({data}) =>{
     console.log('isNestedItem',isNestedItem)
     return(
         <div>
-            {isNestedItem ? <NestRestaurantCAtegory data = {data}/> : <SingleRestaurantCategory data = {data}/>}
+            {isNestedItem ? <NestRestaurantCAtegory data = {data} isNestedItem={isNestedItem}/> : <SingleRestaurantCategory isNestedItem={isNestedItem} data = {data}/>}
         </div>
     )
 }

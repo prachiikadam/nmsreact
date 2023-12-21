@@ -22,3 +22,22 @@ useRouteError is a hook to give more information about error
 Link from react router dom which does not reloads entire page like anchor tag
 
 
+UserContext.Consumer is used for react class based components for consuming context 
+Inside this there will be callback which has access to context data
+To modify user context value user
+ <UserContext.Provider value ={{loggedinUser:'new value'}}> 
+ <UserContext.Provider/> 
+
+
+
+Other state managemengt libraries
+Zustand
+// con of tailwind css ---> js file become lenthier
+
+# Redux toolkit
+-Install @reduxjs/toolkit , react-redux
+- Build store
+- connect store to app
+
+
+
