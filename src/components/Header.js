@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import UserContext from "../utils/UserContext"
+import { useSelector } from "react-redux"
 
 
 
 const Header = () =>{
 
     const loggedindata = useContext(UserContext)
+    //subscribing to the store using a selctor
+    const cartItems = useSelector((store)=>store.cart.fooditems)
+    console.log(cartItems)
    
     return(
         <div className="flex justify-between items-center bg-rose-400">
@@ -21,7 +25,7 @@ const Header = () =>{
                     <li className="px-4"><Link to="/"> Home</Link></li>
                     <li className="px-4"><Link to="/contact"> Contact Us </Link></li>
                     <li className="px-4"> <Link to="/about"> About us </Link></li>
-                    <li className="px-4"> <Link to="/cart"> Cart </Link></li>
+                    <li className="px-4"> <Link to="/cart"> Cart {cartItems.length}</Link></li>
                     <li className="px-4"> <Link to="/grocery"> Grocery </Link></li>
                     <button className="px-4">Login</button>
                 </ul>
